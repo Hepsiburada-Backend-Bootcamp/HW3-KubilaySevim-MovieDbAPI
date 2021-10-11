@@ -15,7 +15,7 @@ using Xunit;
 using MovieDbInf.Domain.Repositories;
 using MovieDbInf.Infrastructure.Repository;
 
-namespace MovieDbInf.TestRepository
+namespace MovieDbInf.TestRepository.UnitTests
 {
     public class MovieUnitTest
     {

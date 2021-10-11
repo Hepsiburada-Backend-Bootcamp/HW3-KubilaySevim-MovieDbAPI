@@ -10,7 +10,7 @@ using MovieDbInf.Domain.Entities;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace MovieDbInf.TestRepository
+namespace MovieDbInf.TestRepository.UnitTests
 {
     public class MovieControllerUnitTest
     {

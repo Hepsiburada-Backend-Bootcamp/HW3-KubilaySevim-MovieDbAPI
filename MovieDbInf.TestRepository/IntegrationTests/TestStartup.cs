@@ -26,6 +26,7 @@ namespace MovieDbInf.TestRepository.IntegrationTests
 
         public override void ConfigureServices(IServiceCollection services)
         {
+              
             services.AddApplicationModuleTestDb(Configuration);
             services.AddControllers().AddApplicationPart(typeof(Startup).Assembly); 
 

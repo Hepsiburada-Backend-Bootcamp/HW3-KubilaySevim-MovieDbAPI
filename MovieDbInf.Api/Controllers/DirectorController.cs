@@ -33,7 +33,6 @@ namespace MovieDbInf.API.Controllers
 
                 return BadRequest();
             }
-
             _logger.LogInformation("In DirectorController Add Method");
             _logger.LogTrace("Log Trace - In Director Add Method");
             await _directorService.Add(directorDto);

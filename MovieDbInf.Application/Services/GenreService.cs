@@ -24,6 +24,7 @@ namespace MovieDbInf.Application.Services
 
         public Task Add(GenreDto genreDto)
         {
+            
             return _genreRepository.Add(_mapper.Map<Domain.Entities.Genre>(genreDto));
         }
 

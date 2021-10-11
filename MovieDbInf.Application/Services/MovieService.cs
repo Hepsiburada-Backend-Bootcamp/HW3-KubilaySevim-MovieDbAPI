@@ -14,17 +14,27 @@ namespace MovieDbInf.Application.Services
     {
         private readonly IMovieRepository _movieRepository;
         private readonly IMapper _mapper;
+        private readonly IDirectorRepository _directorRepository;
 
-        public MovieService(IMovieRepository movieRepository, IMapper mapper)
+        public MovieService(IMovieRepository movieRepository, IMapper mapper, IDirectorRepository directorRepository)
         {
             _movieRepository = movieRepository;
             _mapper = mapper;
+            _directorRepository = directorRepository;
         }
 
-        public Task Add(MovieDto movieDto)
+        public async Task Add(MovieDto movieDto)
         {
-            Movie movie = _mapper.Map<MovieDto,Movie>(movieDto);
-            return _movieRepository.Add(movie);
+
+            var result = _directorRepository.GetX(d => d.Last_name == movieDto.DirectorLastName);
+
+            if (result.Result != null)
+            {
+                Movie movie = _mapper.Map<MovieDto,Movie>(movieDto);
+                await _movieRepository.Add(movie);
+            }
+
+            throw new ApplicationException("Director Not Found");
         }
 
         public Task Delete(int id)

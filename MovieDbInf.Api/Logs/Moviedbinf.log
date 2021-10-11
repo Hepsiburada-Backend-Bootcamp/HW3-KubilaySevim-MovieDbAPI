@@ -6267,3 +6267,36 @@ FROM "Directors" AS d
 2021-10-10 01:43:31.452 +03:00 [INF] Executed action MovieDbInf.API.Controllers.DirectorController.GetAll (MovieDbInf.API) in 1125.4688ms
 2021-10-10 01:43:31.453 +03:00 [INF] Executed endpoint 'MovieDbInf.API.Controllers.DirectorController.GetAll (MovieDbInf.API)'
 2021-10-10 01:43:31.456 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:16827/api/directors text/plain 80 - 200 169 application/json;+charset=utf-8 1141.3718ms
+2021-10-10 21:22:34.021 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-10 21:22:34.027 +03:00 [INF] Hosting environment: Development
+2021-10-10 21:22:34.028 +03:00 [INF] Content root path: C:\Users\dell\RiderProjects\HepsiBuradaBootcamp\HepsiBurada_Week3\MovieDbInf\MovieDbInf.Api
+2021-10-10 21:22:34.154 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:16827/swagger/index.html - -
+2021-10-10 21:22:34.347 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:16827/swagger/index.html - - - 200 - text/html;charset=utf-8 198.4753ms
+2021-10-10 21:25:18.012 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-10 21:25:18.077 +03:00 [INF] Hosting environment: Development
+2021-10-10 21:25:18.078 +03:00 [INF] Content root path: C:\Users\dell\RiderProjects\HepsiBuradaBootcamp\HepsiBurada_Week3\MovieDbInf\MovieDbInf.Api
+2021-10-10 21:25:18.101 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:16827/swagger/index.html - -
+2021-10-10 21:25:18.101 +03:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:16827/ - 0
+2021-10-10 21:25:18.188 +03:00 [WRN] Failed to determine the https port for redirect.
+2021-10-10 21:25:18.406 +03:00 [INF] Request finished HTTP/1.1 DEBUG http://localhost:16827/ - 0 - 404 - - 304.6028ms
+2021-10-10 21:25:18.602 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:16827/swagger/index.html - - - 200 - text/html;charset=utf-8 505.1556ms
+2021-10-10 21:25:19.692 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:16827/swagger/v1/swagger.json - -
+2021-10-10 21:25:19.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:16827/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 211.9803ms
+2021-10-10 21:25:25.402 +03:00 [INF] Request starting HTTP/1.1 DELETE http://localhost:16827/api/directors/1 - -
+2021-10-10 21:25:25.413 +03:00 [INF] Executing endpoint 'MovieDbInf.API.Controllers.DirectorController.Delete (MovieDbInf.API)'
+2021-10-10 21:25:25.505 +03:00 [INF] Route matched with {action = "Delete", controller = "Director"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller MovieDbInf.API.Controllers.DirectorController (MovieDbInf.API).
+2021-10-10 21:25:27.290 +03:00 [INF] Entity Framework Core 5.0.10 initialized 'MovieDbInfContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: MigrationsAssembly=MovieDbInf.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null 
+2021-10-10 21:25:27.489 +03:00 [INF] Delete method directorcontroller
+2021-10-10 21:25:29.034 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."CountryId", d."First_name", d."Last_name"
+FROM "Directors" AS d
+WHERE d."Id" = @__p_0
+LIMIT 1
+2021-10-10 23:21:31.404 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-10-10 23:21:31.424 +03:00 [INF] Hosting environment: Development
+2021-10-10 23:21:31.424 +03:00 [INF] Content root path: C:\Users\dell\RiderProjects\HepsiBuradaBootcamp\HepsiBurada_Week3\MovieDbInf\MovieDbInf.Api
+2021-10-10 23:21:31.434 +03:00 [INF] Request starting HTTP/1.1 DEBUG http://localhost:16827/ - 0
+2021-10-10 23:21:31.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:16827/swagger/index.html - -
+2021-10-10 23:21:31.489 +03:00 [WRN] Failed to determine the https port for redirect.
+2021-10-10 23:21:31.566 +03:00 [INF] Request finished HTTP/1.1 DEBUG http://localhost:16827/ - 0 - 404 - - 133.6470ms
+2021-10-10 23:21:31.654 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:16827/swagger/index.html - - - 200 - text/html;charset=utf-8 222.3507ms

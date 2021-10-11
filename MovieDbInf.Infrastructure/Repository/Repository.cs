@@ -47,10 +47,16 @@ namespace MovieDbInf.Infrastructure.Repository
   
             return model;
         }
+        
+        public Task<List<TEntity>> GetX(Expression<Func<TEntity, bool>> filter)
+        {
+            return _dbSet.Where(filter).ToListAsync();
+        }
 
          public async Task<List<TEntity>> GetAll()
-        {
-            return await _dbSet.ToListAsync();
+         {
+             var result = await _dbSet.ToListAsync();
+            return result;
         }
 
 

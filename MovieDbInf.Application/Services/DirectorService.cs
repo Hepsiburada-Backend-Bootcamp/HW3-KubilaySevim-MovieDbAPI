@@ -28,9 +28,13 @@ namespace MovieDbInf.Application.Services
         }
 
 
-        public Task Add(DirectorDto director)
+        public async Task Add(DirectorDto director)
         {
-            return _directorRepository.Add(_mapper.Map<Domain.Entities.Director>(director));
+            var directorDto = (await _directorRepository.GetX(d =>
+                d.First_name + d.Last_name == director.First_name + director.Last_name)).FirstOrDefault();
+
+            if (directorDto != null) throw new ApplicationException("Director name is exist");
+            await _directorRepository.Add(_mapper.Map<Domain.Entities.Director>(director));
         }
 
 
@@ -43,24 +47,23 @@ namespace MovieDbInf.Application.Services
         {
             //var dtoFilter =  _mapper.Map<Expression<Func<Domain.Entities.Director, bool>>>(filter);
             var result = (await _directorRepository.GetAll()).OrderBy(d => d.Id);
-            return  _mapper.Map<List<DirectorDto>>(result);;
+            return _mapper.Map<List<DirectorDto>>(result);
+            ;
         }
 
-        
+
         public async Task<DirectorDto> Get(int id)
         {
             var dre = await _directorRepository.Get(id);
 
-            return  _mapper.Map<DirectorDto>(dre);
+            return _mapper.Map<DirectorDto>(dre);
         }
 
-        public   Task Delete(int id)
+        public Task Delete(int id)
         {
-            var director =    _directorRepository.Get(id);
+            var director = _directorRepository.Get(id);
 
             return _directorRepository.Delete(_mapper.Map<Domain.Entities.Director>(director.Result));
-
         }
-
     }
 }

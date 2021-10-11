@@ -15,6 +15,8 @@ namespace MovieDbInf.Domain.Repositories
 
         Task<TEntity> Get(int id);
 
+        Task<List<TEntity>> GetX(Expression<Func<TEntity, bool>> filter);
+
         Task<List<TEntity>> GetAll();
         
         
